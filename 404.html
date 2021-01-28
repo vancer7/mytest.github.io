@@ -3,9 +3,11 @@
 <script>//javascript code
 document.write(window.location.pathname);
 var pathArray = window.location.pathname.split('/');
+pathArray
 a=parseInt(pathArray[2]);//initialization of variables
 b=parseInt(pathArray[3]);
 var c = a+b;//perform sum operation
+var ARLENGHT = pathArray.length;
 document.write("  A number is:  " +a);
 document.write("  B number is:  " +b);
 document.write("  sum of numbers is:  " +c);//print the result(+ is a concatenate operator)
