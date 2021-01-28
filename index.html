@@ -2,25 +2,29 @@
 <head>
 <script>
 var varInterval = 1000
-var countDownDate = new Date("Jan 5, 2022 15:37:25").getTime();
-var x = setInterval(function() {
-var now = new Date().getTime();
-var distance = countDownDate - now;
-var days = Math.floor(distance / (1000 * 60 * 60 * 24));
-var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-var seconds = Math.floor((distance % (1000 * 60)) / 1000);
-document.getElementById("displayed").innerHTML = days + "d " + hours + "h "
-+ minutes + "m " + seconds + "s ";
+var timeLeft = +new Date("2021-05-04") - +new Date();
+var daysLeft = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+var hoursLeft = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
+var minutesLeft = Math.floor((timeLeft / 1000) / 60 % 60);
 
-if (distance < 0) {
-  clearInterval(x);
-  document.getElementById("displayed").innerHTML = "DONE";
+const timeLeftText = `${daysLeft} days ${hoursLeft} hours ${minutesLeft} minutes.`;
+document.getElementById("displayed").innerHTML = timeLeftText;
+
+function countdown() {
+	var daysLeft = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+var hoursLeft = Math.floor((timeLeft / (1000 * 60 * 60)) % 24);
+var minutesLeft = Math.floor((timeLeft / 1000) / 60 % 60);
+
+const timeLeftText = `${daysLeft} days ${hoursLeft} hours ${minutesLeft} minutes.`;
+document.getElementById("timer").innerHTML = timeLeftText;
 }
-}, parseint(varInterval));
+
+countdown();
+
+setInterval(countdown, varInterval);
 </script>
 </head>
 <body>
-    <p id="displayed"></p>
+    <div id="displayed"></div>
 </body>
 </html>
