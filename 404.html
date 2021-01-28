@@ -5,9 +5,16 @@
 var pathArray = window.location.pathname.split('/');
 pathArray
 a=parseInt(pathArray[2]);//initialization of variables
-b=parseInt(pathArray[3]);
-var c = a+b;//perform sum operation
+
+//perform sum operation
 var ARLENGHT = pathArray.length;
+if(ARLENGHT>3){
+b=parseInt(pathArray[3]);
+}
+else{
+b=10
+};
+var c = a+b;
 //document.write("  A number is:  " +a);
 //document.write("  B number is:  " +b);
 //.write("  sum of numbers is:  " +c);//print the result(+ is a concatenate operator)
