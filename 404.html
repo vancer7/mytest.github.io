@@ -11,6 +11,9 @@ var ARLENGHT = pathArray.length;
 document.write("  A number is:  " +a);
 document.write("  B number is:  " +b);
 document.write("  sum of numbers is:  " +c);//print the result(+ is a concatenate operator)
+var obj = { "sum": c};
+var text = JSON.stringify(obj, null, 5);
+document.write(text);
 </script>
 </head>
 </html>
