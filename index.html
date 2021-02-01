@@ -39,12 +39,16 @@ var x = setInterval(function() {
     document.getElementById("demo").innerHTML = "EXPIRED";
   }
 }, 1000);
+
+function choosedate(){
+    document.getElementById("choose_date").style.color = "#ff0000";
+}
 </script>
 </head>
 <body>
 
 <p id="demo"></p>
-<input type="button" name="choose_date" value="datego" onclick="choosedate;" />
+<input type="button" name="choose_date" value="Choose New Date" onclick="choosedate;" />
 
 
 </body>
